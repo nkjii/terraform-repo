@@ -5,8 +5,8 @@ aws ecr get-login-password --region $AWS_REGION | docker login --username AWS --
 
 # Build image
 export CONTAINER_NAME=$CONTAINER_NAME
-# docker build -t $CONTAINER_NAME $DOCKER_DIR
-docker-compose -f $DOCKER_DIR build --no-cache
+docker build --platform linux/amd64 -t $CONTAINER_NAME $DOCKER_DIR
+# docker-compose -f $DOCKER_DIR build --no-cache
 
 # Tag
 docker tag $CONTAINER_NAME:latest $REPO_URL:latest

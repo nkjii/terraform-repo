@@ -12,5 +12,5 @@ variable "account_id" {}
 locals {
   repository_name = "${var.name_prefix}-repository"
   container_name = "${var.name_prefix}-container"
-  docker_dir = "/web/app/docker-compose.yml"
+  docker_dir = "/terraform/go-training"
 }
