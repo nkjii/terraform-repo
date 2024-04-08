@@ -5,4 +5,4 @@ region = "ap-northeast-1"
 # TODO: 実行時に編集
 account_id = ""
 sg_ingress_ip_cidr = "/32"
-webapp_port = 1323
+webapp_port = 8080
