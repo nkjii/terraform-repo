@@ -16,7 +16,7 @@ resource "aws_lb_target_group" "default" {
     port                = "traffic-port"
     protocol            = "HTTP"
     # 現状ヘルスチェック用のAPIがないので無効化
-    enabled             = false
+    # enabled             = false
   }
 
   depends_on = [aws_lb.default]
