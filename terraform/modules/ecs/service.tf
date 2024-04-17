@@ -4,6 +4,7 @@ resource "aws_ecs_service" "default" {
   task_definition = aws_ecs_task_definition.default.arn
   desired_count   = "${local.service_count}"
   launch_type     = "${local.task_requires_compatibilities}"
+  enable_execute_command = true
 
   load_balancer {
     target_group_arn = "${var.tg_arn}"
