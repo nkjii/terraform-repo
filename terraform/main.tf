@@ -36,6 +36,11 @@ module "network" {
   region = var.region
   tag_name = var.tag_name
   tag_group = var.tag_group
+
+  public_a_cidr = var.public_a_cidr
+  public_c_cidr = var.public_c_cidr
+  private_a_cidr = var.private_a_cidr
+  private_c_cidr = var.private_c_cidr
 }
 
 # Security Group
