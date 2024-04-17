@@ -96,3 +96,22 @@ module "ecs" {
   ecr_repository_uri = "${module.ecr.repository_uri}"
   execution_role_arn = "${module.iam.execution_role_arn}"
 }
+
+# RDS
+module "rds" {
+  source = "./modules/rds"
+
+  name_prefix = var.name_prefix
+  region = var.region
+  tag_name = var.tag_name
+  tag_group = var.tag_group
+
+  vpc_id = "${module.network.vpc_id}"
+
+  db_name = var.db_name
+  db_username = var.db_username
+  db_password = var.db_password
+
+  subnet_ids = ["${module.network.private_a_id}", "${module.network.private_c_id}"]
+  rds_security_group_id = "${module.sg.sg_rds_id}"
+}

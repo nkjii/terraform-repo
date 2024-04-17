@@ -12,4 +12,5 @@ variable vpc_id {}
 
 locals {
   sg_name = "${var.name_prefix}-sg"
+  sg_rds_name = "${var.name_prefix}-rds-sg"
 }

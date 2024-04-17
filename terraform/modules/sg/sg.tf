@@ -34,3 +34,24 @@ resource "aws_security_group_rule" "egress_all_all" {
   type              = "egress"
   cidr_blocks       = ["0.0.0.0/0"]
 }
+
+# RDS
+resource "aws_security_group" "rds" {
+  name = "${local.sg_rds_name}"
+  vpc_id = "${var.vpc_id}"
+  egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_security_group_rule" "rds_security_group_rule_ecs" {
+  type = "ingress"
+  from_port = 3306
+  to_port = 3306
+  protocol = "tcp"
+  source_security_group_id = aws_security_group.default.id
+  security_group_id = aws_security_group.rds.id
+}
