@@ -19,3 +19,8 @@ variable "account_id" {}
 
 # SG
 variable "sg_ingress_ip_cidr" {}
+
+# RDS
+variable "db_name" {}
+variable "db_username" {}
+variable "db_password" {}
