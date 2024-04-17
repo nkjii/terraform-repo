@@ -1,5 +1,4 @@
 resource "aws_db_instance" "db_instance" {
-    identifier                      = var.db_name
     allocated_storage               = 10
     storage_type                    = "gp2"
     engine                          = var.engine
