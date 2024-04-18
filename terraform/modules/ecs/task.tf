@@ -17,6 +17,7 @@ resource "aws_ecs_task_definition" "default" {
   network_mode             = "${local.task_network_mode}"
   requires_compatibilities = ["${local.task_requires_compatibilities}"]
   execution_role_arn       = "${var.execution_role_arn}"
+  task_role_arn            = "${var.execution_role_arn}"
 
   tags = {
     Name = "${var.tag_name}-task"

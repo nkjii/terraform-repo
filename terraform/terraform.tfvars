@@ -13,6 +13,6 @@ webapp_port = 8080
 # DB_port = 3306
 
 # RDS
-db_name = "sample-db"
+db_name = "sampleDb"
 db_username = "root"
-db_password = "root"
+db_password = "samlepasword"

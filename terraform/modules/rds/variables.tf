@@ -25,9 +25,9 @@ variable "engine" {
 }
 
 variable "engine_version" {
-    default = "8.0.33"
+    default = "8.0"
 }
 
 variable "db_instance" {
-    default = "db.t2.micro"
+    default = "db.t3.micro"
 }
